@@ -6,6 +6,7 @@
       >
       <input
         :id="id"
+        ref="labelInput"
         type="text"
         autocomplete="off"
         v-model.lazy.trim="newLabel"
@@ -50,6 +51,9 @@ export default {
     onCancel() {
       this.$emit("edit-cancelled");
     },
+  },
+  mounted() {
+    this.$refs.labelInput.focus();
   },
 };
 </script>
